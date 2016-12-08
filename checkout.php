@@ -190,7 +190,7 @@ include 'navbar.php';
 					</div>
 				</pay>
 				</div>
-				<button id="activate-step-3" class="btn btn-primary btn-lg">Activate Step 3</button>
+				<button id="activate-step-3" class="btn btn-primary btn-lg">Review and Confirm Order</button>
             </div>
         </div>
     </div>
@@ -209,7 +209,9 @@ include 'navbar.php';
                         <th> </th>
                     </tr>
                 </thead>
-				
+				<confirmation>
+					mmmmm
+				</confirmation>
 				<tfoot>
                     <tr>
                         <td></td>
@@ -230,9 +232,7 @@ include 'navbar.php';
                         </button></a></td>
                     </tr>
                 </tfoot>
-				<confirmation>
-					mmmmm
-				</confirmation>
+				
 				</table>
 				</div>
             </div>

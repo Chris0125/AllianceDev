@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bookstore</title>
+   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+<script type="text/javascript">
+              //initiating jQuery  
+              jQuery(function($) {
+                $(document).ready( function() {
+                  //Îª '.navbar-wrapper' class ÆôÓÃstickUp²å¼þ
+                  $('.navbar-wrapper').stickUp({
+                                parts: {
+                                  0:'home',
+                                  1:'features',
+                                  2: 'news',
+                                  3: 'installation',
+                                  4: 'one-pager',
+                                  5: 'extras',
+                                  6: 'wordpress',
+                                  7: 'contact'
+                                },
+                                itemClass: 'menuItem',
+                                itemHover: 'active'
+                              });
+                });
+              });
+            
+            </script>
+<body style="background:#fafafa">
+
+<div class="btn-group" style="float:right">
+  <button type="button" class="btn btn-default"> login</button>
+  <button type="button" class="btn btn-default">  cart</button>
+  <button type="button" class="btn btn-default">  order</button>
+  <button type="button" class="btn btn-default"> help</button>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" 
+      data-toggle="dropdown">
+      support
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#"> 1</a></li>
+      <li><a href="#"> 2</a></li>
+    </ul>
+  </div>
+</div>
+<hr style="height:1px;border:none;border-top:1px solid #FAFAFA;" />
+<Table bgcolor="#ffffff"  align="center" height="191" width=100%; style="background:#ffffff" >
+<tr align="center" valign="bottom">
+      <td>
+    
+	  
+	   
+		<input type="text" width="400px" placeholder="Book title" />
+		<button class="one1">Search</button>
+	
+	   
+       	
+	  </td>
+</tr> 
+</Table>
+<hr style="height:1px;border:none;border-top:1px solid #FAFAFA;" />
+</body>
+<script src="js/stickUp.min.js"></script>
+</html>

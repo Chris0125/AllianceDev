@@ -186,8 +186,7 @@ include 'navbar.php';
 						var tot = parseFloat(records[i][3]) * parseInt(items[j][0]);
 						subtotal = subtotal + tot;
 						item_box = item_box + '<td class="col-md-1 text-center"><strong>'+ tot +'</strong></td><td class="col-md-1">';
-                        item_box = item_box + '<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Remove';
-                        item_box = item_box + '</button></td></tr>';
+                        item_box = item_box + '</td></tr>';
 						$('tbody').html(item_box);
 						
 					}	

@@ -103,7 +103,7 @@ include 'navbar.php';
                             <ol class="carousel-indicators">
                                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
@@ -112,9 +112,7 @@ include 'navbar.php';
                                 <div class="item">
                                     <img class="slide-image" src="./assets/C.PNG" alt="">
                                 </div>
-                                <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
+                                
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left"></span>
@@ -191,7 +189,7 @@ include 'navbar.php';
     })();
 
 
-    myWait.show();
+ 
 
     // Set up some variables for our pagination
     var page = 1;
@@ -235,7 +233,7 @@ include 'navbar.php';
 			var sort = typeof sort !== 'undefined' ?  sort.trim() : "id";
 			var order = typeof order !== 'undefined' ?  ","+order : "";
 		
-			myWait.show();
+			//myWait.show();
 					
 			// Perform a get request to our api passing the page number and page size as parameters
 			console.log("http://alliancedev.xyz/AllianceDev/api/api.php/products?order="+sort+order+"&page=" + page + "," + page_size);
@@ -275,8 +273,58 @@ include 'navbar.php';
 				// At this point "rows" should have 'page_size' number of items in it,
 				// so append all those rows to the body of the table.
 				$('item').html(item_box);
-			
-				myWait.hide();
+				var scart = "" + '<?php echo $_SESSION["cart"]?>' + "";
+                    //console.log(scart);
+                    scart = scart.split(" ");
+
+                    for (var i = 0; i < scart.length; i++)
+                    {
+                        scart[i] = scart[i].split(",");
+                        //console.log(scart[0][1]);
+                        scart[i][0] = scart[i][0].replace(/\D/g, '');
+                        scart[i][1] = scart[i][1].replace(/\D/g, '');
+                        //console.log(scart);
+                    }
+
+                    //console.log(scart);
+                    for (var j = 0; j < scart.length; j++)
+                    {
+                        if (scart.length > 0)
+                        {
+                            var url_id = scart[j][1];
+                            
+                            $.get("http://alliancedev.xyz/AllianceDev/api/api.php/products?&filter=id,eq," + url_id)
+
+                            // The '.done' method fires when the get request completes
+                            .done(function(data)
+                            {
+                                // Pull the products out of our json object 
+                                var records = data.products.records;
+
+                                // Start an empty html string
+                                cart_item = document.getElementsByTagName('cart')[0].innerHTML;
+                                for (var i = 0; i < records.length; i++)
+                                {
+                                    cart_item = cart_item + '<li> <span class="item"> <span class="item-left"> <img src="' + records[i][6] + '45_.jpg" alt="" />';
+                                    cart_item = cart_item + '<span class="item-info"> <span>' + records[i][1].substr(0, 15) + '...</span> <span>$ ' + records[i][3] + '</span> </span></span>';
+                                    cart_item = cart_item + '<span class="item-right"><button class="btn btn-xs btn-danger pull-right">x</button></span></span></li>';
+                                }
+
+                                // At this point "rows" should have 'page_size' number of items in it,
+                                // so append all those rows to the body of the table.
+                                $('cart').html(cart_item);
+
+                            });
+
+                            var cart_counter = document.getElementsByTagName('cart-counter')[0].innerHTML;
+
+                            cart_counter = parseInt(cart_counter) + 1;
+                            console.log(cart_counter);
+                            document.getElementsByTagName('cart-counter')[0].innerHTML = cart_counter;
+                        }
+
+                    }
+				
 				
 			
 				$('.fa-shopping-cart').click(function(){
@@ -301,7 +349,7 @@ include 'navbar.php';
 			var sort = typeof sort !== 'undefined' ?  sort.trim() : "id";
 			var order = typeof order !== 'undefined' ?  ","+order : "";
 		
-			myWait.show();
+			
 					
 			// Perform a get request to our api passing the page number and page size as parameters
 			console.log("http://alliancedev.xyz/AllianceDev/api/api.php/products?filter=Categories,cs,"+url_id);
@@ -338,8 +386,60 @@ include 'navbar.php';
 					item_box = item_box + '<span class="glyphicon glyphicon-star"></span></p></div></div></div>';
 				}
 				$('item').html(item_box);
-			
-				myWait.hide();
+				
+				var scart = "" + '<?php echo $_SESSION["cart"]?>' + "";
+                    console.log(scart);
+                    scart = scart.split(" ");
+
+                    for (var i = 0; i < scart.length; i++)
+                    {
+                        scart[i] = scart[i].split(",");
+                        //console.log(scart[0][1]);
+                        scart[i][0] = scart[i][0].replace(/\D/g, '');
+                        scart[i][1] = scart[i][1].replace(/\D/g, '');
+                        //console.log(scart);
+                    }
+
+                    //console.log(scart);
+                    for (var j = 0; j < scart.length; j++)
+                    {
+                        if (scart.length > 0)
+                        {
+                            var url_id = scart[j][1];
+                            
+                            $.get("http://alliancedev.xyz/AllianceDev/api/api.php/products?&filter=id,eq," + url_id)
+
+                            // The '.done' method fires when the get request completes
+                            .done(function(data)
+                            {
+                                // Pull the products out of our json object 
+                                var records = data.products.records;
+
+                                // Start an empty html string
+                                cart_item = document.getElementsByTagName('cart')[0].innerHTML;
+                                for (var i = 0; i < records.length; i++)
+                                {
+                                    cart_item = cart_item + '<li> <span class="item"> <span class="item-left"> <img src="' + records[i][6] + '45_.jpg" alt="" />';
+                                    cart_item = cart_item + '<span class="item-info"> <span>' + records[i][1].substr(0, 15) + '...</span> <span>$ ' + records[i][3] + '</span> </span></span>';
+                                    cart_item = cart_item + '<span class="item-right"><button class="btn btn-xs btn-danger pull-right">x</button></span></span></li>';
+                                }
+
+                                // At this point "rows" should have 'page_size' number of items in it,
+                                // so append all those rows to the body of the table.
+                                $('cart').html(cart_item);
+
+                            });
+
+                            var cart_counter = document.getElementsByTagName('cart-counter')[0].innerHTML;
+
+                            cart_counter = parseInt(cart_counter) + 1;
+                            console.log(cart_counter);
+                            document.getElementsByTagName('cart-counter')[0].innerHTML = cart_counter;
+                        }
+
+                    }
+				
+				
 		});
 		}
 	} //End function
@@ -432,7 +532,9 @@ include 'navbar.php';
             // At this point "rows" should have 'page_size' number of items in it,
             // so append all those rows to the body of the table.
             $('tbody').html(rows);
+			
 		});
+		
 	});
     
 	function addCartItem(item){

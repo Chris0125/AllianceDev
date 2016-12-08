@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BOOK</title>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+function subNum(){
+document.getElementById("num").value=document.getElementById("num").value-1;
+}
+function addNum(){
+document.getElementById("num").value=document.getElementById("num").value+1;
+}
+</script>
+<style>
+/* Custom Styles */
+    ul.nav-tabs{
+        width: 140px;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    }
+    ul.nav-tabs li{
+        margin: 0;
+        border-top: 1px solid #ddd;
+    }
+    ul.nav-tabs li:first-child{
+        border-top: none;
+    }
+    ul.nav-tabs li a{
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 0;
+    }
+    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+        color: #fff;
+        background: #0088cc;
+        border: 1px solid #0088cc;
+    }
+    ul.nav-tabs li:first-child a{
+        border-radius: 4px 4px 0 0;
+    }
+    ul.nav-tabs li:last-child a{
+        border-radius: 0 0 4px 4px;
+    }
+    ul.nav-tabs.affix{
+        top: 30px; /* Set the top position of pinned element */
+    }
+</style>
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+<div class="container">
+<nav class="navbar navbar-default" role="navigation" >
+    <div class="container-fluid"  > 
+    <div class="navbar-header" >
+        <a class="navbar-brand" href="#">Alliance</a>
+    </div>
+    <div>
+         <ul class="nav navbar-nav" >
+            <li class="active"><a href="Mainpage.HTML">Mainpage</a></li>
+            <li><a href="login.HTML">Login</a></li>
+            
+            <li><a href="Cart.HTML">Cart</a></li>
+            <li><a href="Setting.HTML">Setting</a></li>
+           
+            <li><a href="Order.HTML">Order</a></li>
+            <li><a href="Comment.HTML">Comment</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Support 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Chris</a></li>
+                    <li><a href="#">Kiran</a></li>
+                    <li><a href="#">Jiaxing Liu</a></li>                  
+                    <li><a href="#">Azhar</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+   <div class="jumbotron" align="center">
+        <h1>BOOKSTORE</h1>
+    </div>
+   
+  <div class="jumbotron" >
+ <table width="80%"; align="center">
+  
+  <tr>
+  <th width="57%" rowspan="6"><img src="1.jpg"  alt="上海鲜花港 - 郁金香"  />  </th>
+  <td width="16%"><strong>Name: </strong></td>
+  <td width="27%">DEADPOOL</td>
+</tr>
+<tr>
+  <td><strong>Author: </strong></td> 
+  <td>MARVEL</td>
+</tr>
+<tr>
+  <td><strong> Price: </strong></td> 
+  <td>$100</td>
+</tr>
+<tr>
+  <td><strong>In stock:</strong></td> 
+  <td> 10</td>
+</tr>
+<tr>
+  <td><button onClick="subNum()">-</button>
+    <input size="2"  type="text"  id="num" value="1">
+    <button onClick="addNum()">+</button></td> 
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td><a href="Mainpage.HTML"><input type="button" class="btn btn-success" value="Check">
+</button><a></td> 
+  <td>
+  
+ 
+ <a href="Mainpage.HTML"><input type="button" class="btn btn-success" value="Add to cart"></button>
+</button><a>
+  
+</td>
+</tr>
+</table>
+<hr>
+
+<table width="80%"; align="center" >
+<blockquote>
+<p>
+  Summary
+  </p>
+  <p>
+  For the film based on the character, see Deadpool (film). For the video game based on the character, see Deadpool (video game). For other uses, see Dead pool (disambiguation).
+Deadpool
+Deadpool-cover.jpg
+Cover of X-Men: Battle of the Atom #1 (Nov. 2013), textless variant.
+Art by David López.
+Publication information
+Publisher	Marvel Comics
+First appearance	The New Mutants #98 (February 1991)
+Created by	Rob Liefeld (artist)
+Fabian Nicieza (writer)
+In-story information
+Alter ego	Ethan Wade Wiley[1]
+Species	Human Mutate[2]
+Team affiliations	Agency X
+Astonishing Avengers
+Avengers Unity Division
+Code Red[3]
+Deadpool Corps
+Frightful Four
+Great Lakes Initiative
+Heroes for Hire
+Landau, Luckman, and Lake
+Maggia
+Mercs for Money[4]
+Secret Defenders
+S.H.I.E.L.D.
+Six Pack
+Thunderbolts
+Weapon X
+X-Force
+X-Men
+Partnerships	Spider-Man
+Agent X
+Blind Al
+Bob, Agent of HYDRA
+Cable
+Copycat
+Domino
+Mr. Tolliver
+Hellcow
+Taskmaster
+Weasel
+Notable aliases	Merc with a Mouth, Regenerating Degenerate, Jack, Wade T. Wilson, Mithras, Johnny Silvini, Thom Cruz, Hulkpool, Wildcard, Zenpool, Weapon XI[5]
+Abilities	
+Regenerative healing factor
+Master martial artist, swordsman, and marksman
+Extended longevity
+Carries devices that grant him teleportation and holographic disguise and a magic satchel
+Deadpool (real name Wade Winston Wilson) is a fictional antihero appearing in American comic books published by Marvel Comics. Created by artist/writer Rob Liefeld and writer Fabian Nicieza, the character first appeared in The New Mutants #98 (cover-dated February 1991). Initially Deadpool was depicted as a mercenary when he made his first appearance in The New Mutants and later in issues of X-Force, but later evolved into his more recognizable antiheroic persona. Deadpool is a disfigured and mentally unstable mercenary with the superhuman ability of an accelerated healing factor and physical prowess. He is known as the "Merc with a Mouth" because of his talkative nature and tendency to break the fourth wall, which is used by writers for humorous effect and running gags.
+
+The character's popularity has seen him feature in numerous other media. In the 2004 series Cable & Deadpool, he refers to his own scarred appearance as "Ryan Reynolds crossed with a Shar Pei",[6][7] leading to Reynolds eventually portraying the character in the 2009 film X-Men Origins: Wolverine and reprising the role in the 2016 film Deadpool.[8][9][10]。
+  </p>
+</blockquote>
+<blockquote class="pull-right">
+  <small>I like this movie! <cite title="Source Title">DEADPOOL</cite></small>
+</blockquote>
+</table>
+</body>
+</html>
