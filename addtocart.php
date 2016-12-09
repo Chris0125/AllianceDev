@@ -1,4 +1,5 @@
 <?php 
+//PHP file to be called to add book to session
 session_start();
 
 if(isset($_POST['cart']))

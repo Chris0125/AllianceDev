@@ -429,7 +429,7 @@ include 'navbar.php';
                                 $('cart').html(cart_item);
 
                             });
-
+							//Set the cart via its html element
                             var cart_counter = document.getElementsByTagName('cart-counter')[0].innerHTML;
 
                             cart_counter = parseInt(cart_counter) + 1;

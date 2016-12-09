@@ -1,4 +1,5 @@
 <?php
+//php file to connect to the database
 
   $DB_host = "localhost";
   $DB_user = "alliance";

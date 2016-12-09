@@ -1,4 +1,5 @@
 <?php
+//Item page 
 include_once 'dbconnect.php';
 session_start();
 ?>
@@ -202,23 +203,28 @@ include 'navbar.php';
                 }
                 $('item').html(item_box);
 
+				//Populate the comment sections
                 $.get("http://alliancedev.xyz/AllianceDev/api/api.php/comments?&filter=item_id,eq," + url_id)
 
                 // The '.done' method fires when the get request completes
                 .done(function(comment_data)
                 {
+					//extract the record
                     var records = comment_data.comments.records;
                     var comment_box = '';
                     comment_box = comment_box + '<div class="ratings"><p class="pull-right">' + records.length;
-
+					
+					//if the number of records is one print review instead of reviews
                     if (records.length == 1)
                         comment_box = comment_box + ' review</p><p>';
                     else
                         comment_box = comment_box + ' reviews</p><p>';
-
+					
+					//calculate total stars
                     var rev_tot = 0;
                     comm_box = '';
-
+					
+					//if there are no reviews, say so
                     if (records.length == 0)
                     {
                         comm_box = comm_box + '<hr><div class="row"><div class="col-md-12">';
@@ -228,6 +234,7 @@ include 'navbar.php';
                         comm_box = comm_box + '</div></div></div>';
 
                     }
+					//else populate the revies
                     else
                     {
                         for (var i = 0; i < records.length; i++)
@@ -281,7 +288,7 @@ include 'navbar.php';
 
 
 
-
+					//Populate the cart
                     var scart = "" + '<?php echo $_SESSION["cart"]?>' + "";
                     //console.log(scart);
                     scart = scart.split(" ");

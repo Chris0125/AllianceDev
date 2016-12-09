@@ -204,7 +204,9 @@ include 'navbar.php';
                         item_box = item_box + '</button></td></tr>';
 						$('tbody').html(item_box);
 						
-					}	
+					}
+`				//the '.then' method fires after the '.done' method completes
+				//
 				}).then(function(){
 					subtotal = Math.round(subtotal*100)/100;
 					document.getElementsByTagName('subtotal')[0].innerHTML = subtotal;

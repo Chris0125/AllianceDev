@@ -1,4 +1,5 @@
 <?php
+//Registration Page
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -20,10 +21,11 @@ include_once 'dbconnect.php';
 // unset($_POST['password_confirmation']);
 // file_put_contents('user.txt',json_encode($_POST)."\n",FILE_APPEND);
 // }
+//If register in the post array is set
 if (isset($_POST['register']))
 {
     //echo "yo";
-    
+    //trim white space
     $fname = $conn->real_escape_string(trim($_POST['first_name']));
     $lname = $conn->real_escape_string(trim($_POST['last_name']));
     $email = $conn->real_escape_string(trim($_POST['email']));
@@ -34,23 +36,25 @@ if (isset($_POST['register']))
     {
         //do something
     }
-    
+    //if we have every thing
     if ($fname && $lname && $email && $pass1 && $pass2)
     {
-        
+        //hash the password
         $new_password = password_hash($pass1, PASSWORD_DEFAULT);
 		//$new_password = $pass1;
         
+		//check to see if email in database already
         $check_email = $conn->query("SELECT email FROM users WHERE email='{$email}'");
         $count       = $check_email->num_rows;
         
+		//if it's not
         if ($count == 0)
         {
             
-            
+            //push to database
             $query = "INSERT INTO users VALUES('{$email}','{$new_password}','{$fname}','{$lname}')";
             
-            
+            //Error handlers
             if ($conn->query($query))
             {
                 $msg = "<div class='alert alert-success'>
